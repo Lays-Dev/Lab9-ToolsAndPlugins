@@ -32,6 +32,13 @@ public class Bullet : MonoBehaviour
         // Deactivate the bullet when it hits a target.
         if (other.CompareTag("Target"))
         {
+            // Get the target that was hit so we can read its points
+            Target target = other.GetComponent<Target>();
+
+            // Tell the score subject to add this target's point value
+            if (target != null && ScoreSubject.Instance != null)
+                ScoreSubject.Instance.AddPoints(target.pointValue);
+
             gameObject.SetActive(false);
             other.gameObject.SetActive(false);
         }

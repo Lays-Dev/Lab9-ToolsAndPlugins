@@ -1,3 +1,5 @@
 The Object Pool Design Pattern was implemented in the BulletPoll script. The game starts with 20 bullets that it reuses instead of creating and destroying a new bullet every time the player clicks space. The 20 bullets are stored in a list. When the player shoots, an unused bullet prefab is pulled from the list.
 
 The Builder Design Pattern was implemented in the TargetBuilder script. There are three different types of targets that the builder can create. Big Slow, Normal, Small Fast. The different aspects that the builder can change are speed, size, points, and movement. The Configure() method in the Target Script sets these aspects per target.
+
+The Observer pattern was implemented by separating the score manager into two scripts ScoreSubject and ScoreDisplay. ScoreSubject manages the score, and is the publisher, while ScoreDisplay shows the score, and is the observer.

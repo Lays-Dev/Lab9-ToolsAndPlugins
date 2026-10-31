@@ -37,6 +37,13 @@ public class Target : MonoBehaviour
         moveDirection = 1;
     }
 
+    // after a load, bob around the saved position
+    public void SetHome(Vector3 position)
+    {
+        startPosition = position;
+        moveDirection = 1;
+    }
+
     void Update()
     {
         // Move the target left and right.

@@ -417,6 +417,7 @@ GameObject:
   m_Component:
   - component: {fileID: 938415124}
   - component: {fileID: 938415123}
+  - component: {fileID: 938415125}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -438,6 +439,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BulletPool
   bulletPrefab: {fileID: 673742160267381380, guid: 9bb4af17d791bc944aeef3102d47abae, type: 3}
   poolSize: 20
+--- !u!114 &938415125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938415122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8b5f02c3e9a47f1b6c4d9e2f0a15822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveLoadInput
 --- !u!4 &938415124
 Transform:
   m_ObjectHideFlags: 0
@@ -495,6 +508,7 @@ GameObject:
   - component: {fileID: 1342436310}
   - component: {fileID: 1342436309}
   - component: {fileID: 1342436308}
+  - component: {fileID: 1342436311}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -519,6 +533,19 @@ MonoBehaviour:
   moveSpeed: 5
   horizontalLimit: 7
   bulletSpeed: 10
+--- !u!114 &1342436311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342436307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7a4e91b2d8f46e0a5b3c8d1e9f04711, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TransformSaver
+  saveID: player
 --- !u!212 &1342436309
 SpriteRenderer:
   serializedVersion: 2

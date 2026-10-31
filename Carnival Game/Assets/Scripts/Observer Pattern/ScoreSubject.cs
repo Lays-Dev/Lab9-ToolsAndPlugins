@@ -12,7 +12,7 @@ public class ScoreSubject : MonoBehaviour
     // Listeners sign up here and get called when the score changes
     public event ScoreUpdated OnScoreUpdated;
 
-    private int score;
+    public int score;
 
     void Awake()
     {
@@ -24,6 +24,13 @@ public class ScoreSubject : MonoBehaviour
         score += points;
 
         // Tell listener the new total
+        OnScoreUpdated?.Invoke(score);
+    }
+
+    // put the saved score back and update the display
+    public void LoadScore(int loadedScore)
+    {
+        score = loadedScore;
         OnScoreUpdated?.Invoke(score);
     }
 }

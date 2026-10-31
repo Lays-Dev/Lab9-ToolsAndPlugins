@@ -31,9 +31,5 @@ public class TransformSaver : MonoBehaviour, ISaveable
         transform.localRotation = data.localRotation;
         transform.localScale = data.localScale;
         gameObject.SetActive(data.active);
-
-        Target target = GetComponent<Target>();
-        if (target != null)
-            target.SetHome(transform.position);
     }
 }

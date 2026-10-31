@@ -12,6 +12,7 @@ public class Target : MonoBehaviour
 
     private Vector3 startPosition;
     private int moveDirection = 1;
+    private bool hasHome;
 
     // Apply's settings to a target.
     public void Configure(
@@ -30,18 +31,15 @@ public class Target : MonoBehaviour
             size.x, size.y, 1f);
     }
 
-    // Spawning position
+    // Spawning position. Only the first time, so a load does not move the path.
     void OnEnable()
     {
+        if (hasHome)
+            return;
+
         startPosition = transform.position;
         moveDirection = 1;
-    }
-
-    // after a load, bob around the saved position
-    public void SetHome(Vector3 position)
-    {
-        startPosition = position;
-        moveDirection = 1;
+        hasHome = true;
     }
 
     void Update()

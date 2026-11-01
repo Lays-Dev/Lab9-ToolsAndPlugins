@@ -3,3 +3,11 @@ The Object Pool Design Pattern was implemented in the BulletPoll script. The gam
 The Builder Design Pattern was implemented in the TargetBuilder script. There are three different types of targets that the builder can create. Big Slow, Normal, Small Fast. The different aspects that the builder can change are speed, size, points, and movement. The Configure() method in the Target Script sets these aspects per target.
 
 The Observer pattern was implemented by separating the score manager into two scripts ScoreSubject and ScoreDisplay. ScoreSubject manages the score, and is the publisher, while ScoreDisplay shows the score, and is the observer.
+
+SAVE AND LOAD
+
+Player score is saved in a binary file called score.dat while the object locations are saved in a JSON file called locations.json.
+
+The class SavingService is a static class that doesn't need to be attached to any gameobject. Two constant variables were made to store the score and data information. The PathForFilename method tells unity where to store the files.
+The SaveGame method runs the SaveScore and SaveLocations methods. This is written this way so that we only need to call one method to save everything. The LoadGame method is written with the same idea in mind. 
+The LoadGame method retrieves the saved files and restores the score and object positions. The objects use SaveID's that are unique to each object saved. This helps the correct data be loaded with the correct object.
